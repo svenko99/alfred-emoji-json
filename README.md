@@ -99,8 +99,8 @@ There are two ways to install `alfred-emoji-json`:
 If you have Swift installed, you can build the tool from source:
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/svenko99/alfred-emoji-json.git
+cd alfred-emoji-json
 swiftc src/alfred-emoji-json.swift -o alfred-emoji-json
 ```
 This will produce an executable `alfred-emoji-json` in the current folder. 
