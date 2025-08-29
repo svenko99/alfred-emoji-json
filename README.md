@@ -41,7 +41,7 @@ Here is an example of the raw JSON that you might generate from your program:
 }
 ```
 
-Pipe the JSON through the tool:
+Pipe the JSON through the `alfred-emoji-json`:
 
 ```bash
 cat tasks.json | ./alfred-emoji-json
@@ -82,7 +82,7 @@ output = {"items": items}
 print(json.dumps(output, ensure_ascii=False, indent=2))
 ```
 
-Pipe the output into the tool to automatically convert the emojis into PNG icons:
+Pipe the output into the `alfred-emoji-json` to automatically convert the emojis into PNG icons:
 
 ```bash
 ./example.py | ./alfred-emoji-json
