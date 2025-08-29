@@ -4,6 +4,14 @@
 
 A lightweight command-line tool that enables workflow authors to use a custom `"icon"` with `"type": "emoji"` in [Alfred Script Filter JSON](https://www.alfredapp.com/help/workflows/inputs/script-filter/json/). Simply [pipe](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html) the JSON output from your program into the tool (`alfred-emoji-json`). The tool converts the emoji into a PNG file so that it can be displayed as the item’s icon.
 
+
+## Details
+
+- Emoji should be placed in the `"path"` field of the `"icon"` object with `"type": "emoji`. 
+- Emojis are converted into 256px transparent PNG files stored in `./emojis/`.
+- The `./emojis` directory is created automatically in workflow folder if it does not exist.
+- PNG files are reused if already generated, speeding up repeated runs.
+
 ## Raw JSON example 
 
 Here is an example of the raw JSON that you might generate from your program:
@@ -41,17 +49,9 @@ cat tasks.json | ./alfred-emoji-json
 
 <img src="assets/demo1.png" alt="demo picture 1" width="80%" height="auto">
 
-### Notes
-
-- Emoji should be placed in the `"path"` field of the `"icon"` object with `"type": "emoji`. 
-- Emojis are converted into 256px transparent PNG files stored in `./emojis/`.
-- The `./emojis` directory is created automatically if it does not exist.
-- PNG files are reused if already generated, speeding up repeated runs.
-
-
 ## Code example
 
-Consider the below Python code, which generates Alfred Script Filter JSON with emoji icons based on task scores:
+Consider the following Python code, which generates Alfred Script Filter JSON with emoji icons based on task scores:
 
 ```python
 #!/usr/bin/env python3
@@ -87,8 +87,6 @@ Pipe the output into the tool to automatically convert the emojis into PNG icons
 ```bash
 ./example.py | ./alfred-emoji-json
 ```
-
-The resulting JSON will have updated `"icon"` paths pointing to the generated PNG files, ready to be used in Alfred Script Filter workflows.
 
 <img src="assets/demo2.png" alt="demo picture 1" width="80%" height="auto">
 
