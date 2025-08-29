@@ -94,20 +94,16 @@ Pipe the output into the tool to automatically convert the emojis into PNG icons
 
 There are two ways to install `alfred-emoji-json`:
 
-#### 1. Build from source
-
-If you have Swift installed, you can build the tool from source:
+### 1. Build from source
 
 ```bash
 git clone https://github.com/svenko99/alfred-emoji-json.git
 cd alfred-emoji-json
 swiftc src/alfred-emoji-json.swift -o alfred-emoji-json
 ```
-This will produce an executable `alfred-emoji-json` in the current folder. 
+This creates the `alfred-emoji-json` executable in the current folder. Move the file into your Alfred workflow folder to use it.
 
-#### 2. Use unsigned binary
+### 2. Download executable
 
-You can also download the prebuilt unsigned binary. If macOS blocks the execution due to security settings run: `sudo xattr -rd com.apple.quarantine ./alfred-emoji-json`.
+Download the prebuilt unsigned executable binary. If macOS blocks execution due to security settings, run: `sudo xattr -rd com.apple.quarantine ./alfred-emoji-json`. Then move the file into your Alfred workflow folder to use it.
 
-
-After obtaining the executable (either by building from source or downloading the unsigned binary), you can integrate it into your Alfred workflow by moving the executable into your workflow folder.
