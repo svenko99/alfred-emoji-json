@@ -7,7 +7,7 @@ A lightweight command-line tool that enables workflow authors to use a custom `"
 
 ## Details
 
-- Emoji should be placed in the `"path"` field of the `"icon"` object with `"type": "emoji`. 
+- Emoji should be placed in the `"path"` field of the `"icon"` object with `"type": "emoji"`. 
 - Emojis are converted into 256px transparent PNG files stored in `./emojis/`.
 - The `./emojis` directory is created automatically in workflow folder if it does not exist.
 - PNG files are reused if already generated, speeding up repeated runs.
