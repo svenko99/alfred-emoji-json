@@ -38,30 +38,6 @@ Pipe the JSON through the tool:
 ```bash
 cat tasks.json | ./alfred-emoji-json
 ```
-Output JSON:
-
-```json
-{
-  "items": [
-    {
-      "title": "Build Project",
-      "subtitle": "Build succeeded",
-      "arg": "build",
-      "icon": {
-        "path": "./emojis/1F7E2.png"
-      }
-    },
-    {
-      "title": "Run Tests",
-      "subtitle": "Tests failed",
-      "arg": "test",
-      "icon": {
-        "path": "./emojis/1F534.png"
-      }
-    }
-  ]
-}
-```
 
 <img src="assets/demo1.png" alt="demo picture 1" width="80%" height="auto">
 
