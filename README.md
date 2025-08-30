@@ -1,13 +1,15 @@
 
 
-# Alfred Emoji JSON
+# `alfred-emoji-json`
 
-A lightweight command-line tool that enables workflow authors to use a custom `"icon"` with `"type": "emoji"` in [Alfred Script Filter JSON](https://www.alfredapp.com/help/workflows/inputs/script-filter/json/). Simply [pipe](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html) the JSON output from your program into the tool (`alfred-emoji-json`). The tool converts the emoji into a PNG file so that it can be displayed as the item’s icon.
+A command-line tool that takes [Alfred Script Filter JSON](https://www.alfredapp.com/help/workflows/inputs/script-filter/json/) as input, replaces any `"icon"` objects with `"{type": "emoji", "path": "<EMOJI>"}` (where `<EMOJI>` is the desired emoji) by generating a PNG file for the emoji, and outputs the modified JSON where the `"icon"` points to the generated PNG.
 
+Use it by [piping](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html) JSON into the `alfred-emoji-json`.
 
 ## Details
 
-- Emoji should be placed in the `"path"` field of the `"icon"` object with `"type": "emoji"`. 
+- Emoji should be placed in the `"path"` field of the `"icon"` object with `"type": "emoji"`
+  - (e.g. `"icon": { "type": "emoji", "path": "😃" }`)
 - Emojis are converted into 256px transparent PNG files stored in `./emojis/`.
 - The `./emojis` directory is created automatically in workflow folder if it does not exist.
 - PNG files are reused if already generated, speeding up repeated runs.
@@ -47,7 +49,7 @@ Pipe the JSON through the `alfred-emoji-json`:
 cat tasks.json | ./alfred-emoji-json
 ```
 
-<img src="assets/demo1.png" alt="demo picture 1" width="80%" height="auto">
+<img src="assets/demo1.png" alt="demo picture 1" width="90%" height="auto">
 
 ## Code example
 
@@ -88,7 +90,7 @@ Pipe the output into the `alfred-emoji-json` to automatically convert the emojis
 ./example.py | ./alfred-emoji-json
 ```
 
-<img src="assets/demo2.png" alt="demo picture 1" width="80%" height="auto">
+<img src="assets/demo2.png" alt="demo picture 2" width="90%" height="auto">
 
 ## Installation
 
