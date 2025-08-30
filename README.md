@@ -109,7 +109,7 @@ This creates the `alfred-emoji-json` executable in the current folder. Move the 
 ### 2. Download binary
 
 [⤓ Download](https://github.com/svenko99/alfred-emoji-json/releases/latest/download/alfred-emoji-json) the prebuilt unsigned binary.
-After downloading, make it executable by running: `chmod +x alfred-emoji-json`.
+After downloading, make it executable by running: `chmod +x alfred-emoji-json`. Then move the file into your Alfred workflow folder to use it.
 
-If macOS blocks execution due to security settings, run: `sudo xattr -rd com.apple.quarantine ./alfred-emoji-json`. Then move the file into your Alfred workflow folder to use it.
+If macOS blocks execution due to security settings, run: `sudo xattr -rd com.apple.quarantine ./alfred-emoji-json`.
 
